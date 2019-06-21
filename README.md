@@ -8,5 +8,5 @@ In this repository I will post all the code I write while learning JavaScript fr
 <br>
 <h5>6/14/19 3:33 PM : Watching <a href="https://www.youtube.com/watch?v=yfoY53QXEnI">CSS Crash Course For Absolute
         Beginners</a></h5>
-<pre> Made a CSS styled web page <a href="#">WebSite_1</a></pre>
+<pre> Made a CSS styled web page <a href="http://htmlpreview.github.com/?https://github.com/AhmedSakr01/JavaScriptStudy/WebSite_1/index.html">WebSite_1</a></pre>
 <br>
