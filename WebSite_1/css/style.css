@@ -35,7 +35,7 @@ color: #fff;
     padding-right: 15px;
 }
 #showcase{
-    background-image: url('../img/bg.jpg');
+    background-image: url('./img/bg.jpg');
     background-position: center right;
     min-height: 300 px;
     margin-bottom: 30px;
