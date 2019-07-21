@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Div, Span, ID and Class</title>
+  <style>
+  #main-header{
+    background-color: aliceblue;
+    border: 5px red solid;
+  }
+  #main-nav{
+    background-color: #ff4;
+    margin: 0;
+  }
+  #main-nav li{
+    display: inline;
+  }
+  .box-div{
+    background-color: #333;
+    color: #fff; 
+    border: solid black 1px;
+  }
+  </style>
 </head>
+
 <body>
-  <div>
-<h1>My Website header</h1>
-<p>This is my Website</p>
+  <div  id="main-header">
+    <h1>My Website header</h1>
+    <p>This is my Website</p>
+  </div>
+  <ul id="main-nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div id="about" >
+    <h3>About</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non praesentium saepe sint reiciendis blanditiis
+      adipisci impedit magnam! Est, officia repudiandae.</p>
+  </div>
+  <div id="contact">
+    <h3>Contact Me</h3>
+    <ul>
+      <li>Address: Minia, Egypt.</li>
+      <li>Phone: +20 10 100 100 11</li>
+      <li>Email: ahmed.sakr.eng@gmail.com</li>
+    </ul>
+  </div>
+  <div id="footer" class="box-div">
+    <p>Copyright &copy;2019.</p>
   </div>
 </body>
+
 </html>

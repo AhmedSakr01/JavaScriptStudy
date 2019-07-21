@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Selectors</title>
+</head>
+<style>
+/* Element styling */
+body{
+  background-color: #333;
+}
+
+/* The dot . sign is for classes */
+  .primary-heading{
+  color:green;
+}
+  /* The # sign is for id... */
+#welcome{
+  background-color: #f4f4f4;
+}
+/* Multiple styling */
+#welcome,#about{
+  border:1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+/* Nested selectors... */
+#welcome p{
+  font-size: 20px;
+}
+#about{
+  color:#fff;
+}
+
+</style>
+
+<body>
+    <div id="welcome">
+      <h2 class="primary-heading">Welcome</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, ducimus tempora? Minus veniam molestiae soluta
+        assumenda! Magnam placeat amet asperiores?</p>
+    </div>
+    <div id="about">
+      <h2>About</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat natus ipsam est facilis sapiente itaque
+        recusandae officia quidem explicabo cupiditate.</p>
+    </div>
+</body>
+
+</html>
