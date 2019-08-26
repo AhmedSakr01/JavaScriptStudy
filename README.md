@@ -12,7 +12,7 @@ In this repository I will post all the code I write while learning JavaScript fr
 <br>
 <h5>8/22/19 7:30 AM : Completed the first javaScript project for Udacity front end development nanodegree</h5>
 <pre> I made a sample webite where the user can draw by coloring grid bits with clicks 
-here: <a href="http://htmlpreview.github.com/?https://github.com/AhmedSakr01/JavaScriptStudy/blob/master/workspace-PixelArt/index.html">PixelArt</a></pre>
+here: <a href="http://htmlpreview.github.io/?https://github.com/AhmedSakr01/workspace-PixelArt/blob/master/index.html">PixelArt</a></pre>
 <br>
 <h5> </h5>
 <br>
