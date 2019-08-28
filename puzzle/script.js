@@ -61,23 +61,23 @@ container.offsetHeight=document.offsetHeight;
 console.log(container +'\n'+ window.outerHeight);
 // container.setAttribute('style','height:'+(gameArea.offsetHeight-20)+'px');
 container.setAttribute('style','height:'+(window.innerHeight-20)+'px');
-// window.addEventListener('resize',  function (ev) {
-//   // target=ev.currentTarget;
-//   let w0 = window.innerHeight-50;
-//   if(window.innerWidth>=685){
-//   let body = document.getElementsByTagName('body')[0];
-//   let sidebar = document.getElementById('sidebar');
-//   let gameArea = document.getElementById('gameArea');
-//   // body.setAttribute('style', 'height:' + w0+';');
-//   sidebar.setAttribute('style', 'height:' + w0+'px;');
-//   gameArea.setAttribute('style', 'height:' + w0+'px;');
-//   }
-//   else{
-//     sidebar.setAttribute('style', '');
-//   gameArea.setAttribute('style', '');
-//   }
-//   console.log('target:  '+w0);
-// });
+window.addEventListener('resize',  function (ev) {
+  // target=ev.currentTarget;
+  let w0 = window.innerHeight-50;
+  if(window.innerWidth>=685){
+  let body = document.getElementsByTagName('body')[0];
+  let sidebar = document.getElementById('sidebar');
+  let gameArea = document.getElementById('gameArea');
+  // body.setAttribute('style', 'height:' + w0+';');
+  sidebar.setAttribute('style', 'height:' + w0+'px;');
+  gameArea.setAttribute('style', 'height:' + w0+'px;');
+  }
+  else{
+    sidebar.setAttribute('style', '');
+  gameArea.setAttribute('style', '');
+  }
+  console.log('target:  '+w0);
+});
 // let h0=body[0].getAttribute(wi);
 // console.log('h0:' + w0);
 
