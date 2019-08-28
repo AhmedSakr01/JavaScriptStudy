@@ -1,30 +1,76 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: auto;
-  overflow: hidden;
+  /* height: auto; */
+  /* overflow: hidden; */
+  /* background-color: #fff000; */
+}
+
+#gameGrid {
+  width: 400px;
+  box-sizing: border-box;
+  border: #f70 10px solid;
+  margin: auto;
+  /* table-layout: auto; */
+  box-shadow: #000 4px 4px 5px;
+  border-radius: 1em;
+  vertical-align: middle;
+}
+
+#gameArea {
+  /* right: 0; */
+  height: 100%;
+  box-sizing: border-box;
+  width: 70%;
+  text-align: center;
+  padding: 20px;
+  background-color: #00fd72c7;
+  float: right;
+  vertical-align: middle;
+}
+
+#gameContainer {
+  position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 #container {
   height: 100%;
-  display: flexbox;
-  flex-wrap: wrap;
-  flex-direction: row;
+  /* display: flexbox;
+  flex-wrap: nowrap; */
+  /* flex-direction: row; */
   align-items: center;
+  
 }
 
 #sidebar {
-  float: left;
+  /* left: 0; */
+  height: 100%;
   width: 30%;
   box-sizing: border-box;
   background-color: #fff000;
-  margin: 0;
   text-align: center;
   padding: 10px;
+  float: left;
+  /* max-height: 400px; */
+}
+
+#sideContainer {
+  position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 #title {
@@ -37,16 +83,7 @@ body {
 
 #logo {
   width: 50%;
-}
-
-#gameArea {
-  float: left;
-  box-sizing: border-box;
-  width: 70%;
-  text-align: center;
-  padding: 20px;
-  background-color: #00fd72c7;
-  /* height: 468.5px; */
+  max-width: 100px;
 }
 
 #score {
@@ -55,15 +92,6 @@ body {
   padding-top: 0;
   margin: auto;
   margin-top: .1em;
-}
-
-#gameGrid {
-  box-sizing: border-box;
-  border: #f70 10px solid;
-  margin: auto;
-  /* table-layout: auto; */
-  box-shadow: #000 4px 4px 5px;
-  border-radius: 1em;
 }
 
 tr {
@@ -100,22 +128,30 @@ table img {
   text-align: left;
   padding-left: 1em;
 }
+
 /* design for small screens... */
+
 @media(max-width:680px) {
+  #sideContainer {
+  /* position: inherit; */
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  }
   #sidebar {
     display: flex;
     flex-wrap: wrap;
     flex-flow: row;
     width: 100%;
     overflow: hidden;
-    /* height: 75px; */
-    /* box-sizing: border-box; */
+    height: 75px;
+    box-sizing: border-box;
   }
   #title {
     width: 20%;
     text-align: center;
     font-size: 100%;
-    margin: 0 0.2em;
+    margin: 0 auto;
     align-self: center;
     /* margin-left: .1em;
     margin-right: 1em; */
@@ -152,25 +188,29 @@ table img {
   #gameArea {
     width: 100%;
     box-sizing: border-box;
+    height: 90%;
+  }
+  /* #gameGrid {
+    /* width: 100%; */
+}
+
+@media(max-width:360px) {
+  body {
+    width: 100%;
+    display: flexbox;
+  }
+  #gameGrid {
+    width: 100%;
+    margin: auto;
+  }
+  td, tr {
+    box-sizing: border-box;
+    width: 25%;
   }
 }
-
-/* @media(max-width:400px) {
-body{
-  width: 100%;
-  display: flexbox;
-
-}
-  #gameArea{
-  width: 100%;
-  margin: auto;
-}
-  td,tr{
-  width: 30px;
-  height: 30px;
-}
-} */
 
 /* !! this is the remainig work notes ..
 fix td sizing for mobile phones.. 
 */
+
+/* footer style */
