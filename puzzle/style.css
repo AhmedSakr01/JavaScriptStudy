@@ -13,8 +13,10 @@ body {
   /* background-color: #fff000; */
 }
 
+/* Design for desktop and wide-screens... */
+
 #gameGrid {
-  width: 400px;
+  width: 50%;
   box-sizing: border-box;
   border: #f70 10px solid;
   margin: auto;
@@ -38,10 +40,10 @@ body {
 
 #gameContainer {
   position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #container {
@@ -50,7 +52,6 @@ body {
   flex-wrap: nowrap; */
   /* flex-direction: row; */
   align-items: center;
-  
 }
 
 #sidebar {
@@ -67,10 +68,10 @@ body {
 
 #sideContainer {
   position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #title {
@@ -84,6 +85,7 @@ body {
 #logo {
   width: 50%;
   max-width: 100px;
+  margin: 0.5em;
 }
 
 #score {
@@ -99,13 +101,16 @@ tr {
 }
 
 table img {
+  
   width: 100%;
-  height: auto;
+  /* height: auto; */
+  visibility: hidden;
 }
 
 #timer {
   font: 30px impact, sans-serif;
   text-shadow: #fff 2px 2px 2px;
+  margin: 0.5em;
 }
 
 #start {
@@ -120,23 +125,30 @@ table img {
 
 #start:visited {
   top: 10px;
+  
 }
 
 #movesLeft {
   font: 20px impact, sans-serif;
   text-shadow: #fff 2px 2px 2px;
-  text-align: left;
-  padding-left: 1em;
+  text-align: center;
+  margin: 0.5em;
+  /* padding-top: 2em; */
+  /* padding-left: 1em; */
+}
+
+#footer {
+  height: fit-content;
 }
 
 /* design for small screens... */
 
 @media(max-width:680px) {
   #sideContainer {
-  /* position: inherit; */
-  display: flex;
-  width: 100%;
-  box-sizing: border-box;
+    /* position: inherit; */
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
   }
   #sidebar {
     display: flex;
@@ -188,10 +200,11 @@ table img {
   #gameArea {
     width: 100%;
     box-sizing: border-box;
-    height: 90%;
+    /* height: 90%; */
   }
-  /* #gameGrid {
-    /* width: 100%; */
+  #gameGrid {
+    width: 90%;
+  }
 }
 
 @media(max-width:360px) {
@@ -200,13 +213,35 @@ table img {
     display: flexbox;
   }
   #gameGrid {
-    width: 100%;
+    /* width: 100%; */
+    height: 100%;
     margin: auto;
   }
   td, tr {
     box-sizing: border-box;
     width: 25%;
   }
+}
+
+/* -------------------------------
+----------GAME EFFECTS ---------- */
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+  border: none;
+}
+.correct{
+  border: #f70 2px solid;
+}
+.incorrect{
+  border: none;
+}
+.clicked{
+  box-shadow: #000 2px 2px;
 }
 
 /* !! this is the remainig work notes ..
