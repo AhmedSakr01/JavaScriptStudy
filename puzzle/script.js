@@ -212,7 +212,7 @@ startBtn.addEventListener('click', function (e) {
     var tableEvent = table[0].addEventListener('click', tableClickHandler);
 
     // setup a timer with 100-mSec interval ...
-    let t_min = 1, t_sec = 0, interval = 10;
+    let t_min = 1 , t_sec = 0, interval = 10;
     countDownTimer = setInterval(function () {
       if (t_sec <= 0.1 & t_min > 0) {
         t_min--;
