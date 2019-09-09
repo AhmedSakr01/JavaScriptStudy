@@ -244,6 +244,19 @@ table img {
   box-shadow: #000 2px 2px;
 }
 
+.happyLogo{
+  content: url(img/Logo/boss.png);
+}
+.sadLogo{
+  content: url(img/Logo/angry.png);
+}
+.thinkingLogo{
+  content: url(img/Logo/think.png);
+}
+.deadLogo{
+  content: url(img/Logo/dead.png);
+}
+
 /* !! this is the remainig work notes ..
 fix td sizing for mobile phones.. 
 */

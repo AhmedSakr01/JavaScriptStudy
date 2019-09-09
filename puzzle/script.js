@@ -7,13 +7,11 @@ for (let r = 0; r < w.length; r++) {
   w[r].setAttribute('id', r);
 }
 console.log(`Table data elements: ${w.length}`);
-
-let order = [];
+let order = [];   // will be used to save the random order of table <td> elements...
 
 //!---------
 // function: shuffle the image array 
 // source: https://www.w3resource.com/javascript-exercises/javascript-array-exercise-17.php
-
 function shuffle(_array) {
   let count = _array.length, temp, index;
   // use for loop to repeatly shuffle the array to get a resonable unform distribution...
@@ -30,8 +28,8 @@ function shuffle(_array) {
   return _array;
 }
 
+// function: placing images inside the game-grid in random order... 
 function placeImages(img) {
-  // function: placing images inside the game-grid in random order... 
   var imgElements = [];
   for (let i = 0; i < w.length; i++) {
     imgElements.push(w[i].getElementsByTagName('img')[0]);
@@ -58,11 +56,10 @@ placeImages(images);
 
 // fit the window height... 
 // let body = document.getElementsByTagName('body')[0];
-
 let container = document.getElementById('container');
 let gameArea = document.getElementById('gameArea');
 container.offsetHeight = document.offsetHeight;
-console.log(container + '\n' + window.outerHeight);
+console.log(container.nodeName + ':' + container.id + ':\n' + window.outerHeight);
 // container.setAttribute('style','height:'+(gameArea.offsetHeight-20)+'px');
 container.setAttribute('style', 'height:' + (window.innerHeight - 20) + 'px');
 // 
@@ -89,20 +86,23 @@ let Clicked = false;
 var firstIndex;
 var nextindex;
 var score = 0;
-// console.log(table);
 var firstItem;
+var moves=0;
 var tableClickHandler = function tableClickEvtL(e) {
+  
   let evTarget = e.target;
   console.log('event target: ' + evTarget);
   if (e.target.nodeName == 'TD') {
     // console.log(e.target);
     show(evTarget);
     if (!Clicked) {
-      console.log('clicked');
+      // console.log('clicked');
       firstItem = evTarget;
       firstIndex = evTarget.getAttribute('id');     // gets the index of the clickes <td>
       evTarget.setAttribute('class', 'clicked');
       // ----> change the logo to the thinking mode here!
+      logoImage('thinking');
+      // <----
       let orderIndex = order.indexOf(Number(firstIndex)); // gets the order of the clickes <td> in the shuffle order array.
       if (orderIndex % 2 == 0) {
         nextindex = order[orderIndex + 1];
@@ -122,32 +122,49 @@ var tableClickHandler = function tableClickEvtL(e) {
         firstItem.setAttribute('class', '');
         firstItem.setAttribute('class', 'correct');
         scoreUp();
+        logoImage('happy');
       }
       else {
         console.log("Sorry man, Try again!");
-        // evTarget.setAttribute('class', 'visible');
-        // firstItem.setAttribute('class', 'visible');
+        logoImage('sad');
         incorrect(evTarget, firstItem);
       }
-
       Clicked = false;
+      moves++;
+      // console.log(moves);
+      addMoves(moves);
     }
-
-
   }
 
 }
-var tableEvent = table[0].addEventListener('click', tableClickHandler);
+// decrement moves shown in sidebar...
+function addMoves(count) {
+  document.getElementById('movesLeft').innerHTML = `Moves: ${count}`;
+}
 
 // Make thr image visible after click ...
 function show(td) {
   let temp = td.getElementsByTagName('img')[0];
   temp.setAttribute('class', 'visible');
 }
+function hide(td) {
+  let temp = td.getElementsByTagName('img')[0];
+  temp.setAttribute('class', '');
+  temp.setAttribute('class', 'hidden');
+}
 function scoreUp() {
   score++;
   let scoreElm = document.getElementById('score');
   scoreElm.innerHTML = "Score: " + score;
+  // When the played ends tha game and find all similarities ----->>> End the game ---->  
+  //                        --> remove event listener from the table
+  //                        --> stop the counter
+  //                        --> display CONGRATULATIONS MESSAGE! <<<< 
+  if (score == 8) {
+    table[0].removeEventListener('click', tableClickHandler);
+    alert(`Time is up, your score is ${score}`);
+    clearInterval(countDownTimer);
+  }
 }
 function incorrect(index_1, index_2) {
   //reset <td> styling...
@@ -171,27 +188,75 @@ function incorrect(index_1, index_2) {
 var start = false;
 const startBtn = document.getElementById('start');
 const timer = document.getElementById('timer');
+var countDownTimer;
 //---- Here starts the fun ! :D -------------->>>
 startBtn.addEventListener('click', function (e) {
-  let t_min = 2, t_sec = 0;
-  startBtn.setAttribute('style', 'pointer-events:none;'); //   Disables the button until time out or reload...
-  var countDownTimer = setInterval(function () {
-    if (t_sec <= 0.1 & t_min > 0) {
-      t_min--;
-      t_sec = 60 - 0.1;
+  //   Disables the button until time out or reload...
+  startBtn.setAttribute('style', 'pointer-events:none;');
+  //  Show the images of the game for 2 seconds...
+  for (let i = 0; i < w.length; i++) {
+    show(w[i]);
+  }
+  // Hide the images after 2000 mSec....
+  setTimeout(function () {
+    for (let i = 0; i < w.length; i++) {
+      hide(w[i]);
     }
-    else if (t_sec <= 0.1 & t_min <= 0) {
-      //Time Out .....................>>>>>>>>>>>><<<<<<<<<<<<<
-      table[0].removeEventListener('click',tableClickHandler);
 
-      clearInterval(countDownTimer);
+    // Enable the player to click and play in the table ... 
+    // ---> add event listener to the table--->>>
+    var tableEvent = table[0].addEventListener('click', tableClickHandler);
 
-    }
-    t_sec -= 0.1;
-    timer.innerHTML = `${t_min}:${Number(t_sec).toFixed(2)}`;
-  }, 100);
+    // setup a timer with 100-mSec interval ...
+    let t_min = 2, t_sec = 0, interval = 10;
+    countDownTimer = setInterval(function () {
+      if (t_sec <= 0.1 & t_min > 0) {
+        t_min--;
+        t_sec = 60 - (interval / 1000);
+      }
+      
+      t_sec -= interval / 1000;
+      timer.innerHTML = `${t_min}:${Number(t_sec).toFixed(2)}`;
+      // turn the timer color to red when there are only 30 sec. left --->>>
+      if (t_min == 0 & t_sec < 30 & t_sec > 29) {
+        document.getElementById('timer').setAttribute('style', 'color:red;');
+      }
+      else if (t_sec <= 0.1 & t_min <= 0) {
+        //Time Out .....................>>>>>>>>>>>><<<<<<<<<<<<<
+        table[0].removeEventListener('click', tableClickHandler);
+        if(score<8){
+          logoImage('dead');
+        }
+        clearInterval(countDownTimer);
+        alert(`Time is up, your score is ${score}`);
+      }
+      // End of timer function  <<<
+    }, interval);
+    //---->>> Here Ends the setTimeOut timer of hiding the images<<<
+  }, 2000);
 });
 
-function timerText() {
-  document
+function logoImage(status) {
+  let logo = document.getElementById('logo');
+
+  if (status == 'happy') {
+  }
+  switch (status) {
+    case 'happy':
+      logo.setAttribute('class', 'happyLogo');
+      break;
+    case 'sad':
+      logo.setAttribute('class', 'sadLogo');
+      break;
+    case 'thinking':
+      logo.setAttribute('class', 'thinkingLogo');
+      break;
+    case 'dead':
+      logo.setAttribute('class', 'deadLogo');
+      break;
+
+
+    default:
+      break;
+  }
 }
