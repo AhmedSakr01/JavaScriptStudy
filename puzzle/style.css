@@ -101,7 +101,6 @@ tr {
 }
 
 table img {
-  
   width: 100%;
   /* height: auto; */
   visibility: hidden;
@@ -125,7 +124,6 @@ table img {
 
 #start:visited {
   top: 10px;
-  
 }
 
 #movesLeft {
@@ -205,6 +203,27 @@ table img {
   #gameGrid {
     width: 90%;
   }
+  #mod-back {
+    position: fixed;
+    z-index: 1;
+    /* top: 50%; */
+    /* bottom: 10%; */
+    /* left: 20%;
+    right:20%;
+    /* width: auto; */
+    height: auto; */
+    /* align-content: center;
+    text-align: center; */
+    /* overflow: auto; */
+  }
+  #failed-img{
+    position: fixed;
+    /* top: 20%; */
+    /* left: 1%;
+    right: 10%; */
+    margin: auto;
+    /* bottom: 20%; */
+  }
 }
 
 @media(max-width:360px) {
@@ -221,6 +240,29 @@ table img {
     box-sizing: border-box;
     width: 25%;
   }
+  #mod-back {
+    position: fixed;
+    z-index: 1;
+    /* top: 50%; */
+    /* bottom: 10%; */
+    /* left: 20%;
+    right:20%; */
+    width: 100%;
+    /* height: auto; */
+    /* align-content: center;
+    text-align: center; */
+    /* overflow: auto; */
+  }
+  
+  #failed-img,#success-img{
+    width: 70%;
+    /* position: fixed; */
+    /* top: 20%; */
+    /* left: 20%; */
+    /* right: 20%; */
+    margin: auto;
+    /* bottom: 20%; */
+  }
 }
 
 /* -------------------------------
@@ -234,26 +276,32 @@ table img {
   visibility: hidden;
   border: none;
 }
-.correct{
+
+.correct {
   border: #f70 2px solid;
 }
-.incorrect{
+
+.incorrect {
   border: none;
 }
-.clicked{
+
+.clicked {
   box-shadow: #000 2px 2px;
 }
 
-.happyLogo{
+.happyLogo {
   content: url(img/Logo/boss.png);
 }
-.sadLogo{
+
+.sadLogo {
   content: url(img/Logo/angry.png);
 }
-.thinkingLogo{
+
+.thinkingLogo {
   content: url(img/Logo/think.png);
 }
-.deadLogo{
+
+.deadLogo {
   content: url(img/Logo/dead.png);
 }
 
@@ -261,4 +309,69 @@ table img {
 fix td sizing for mobile phones.. 
 */
 
-/* footer style */
+/* Message  style */
+
+#message{
+  align-content: center;
+  margin: auto;
+}
+.congrats{
+  display: inherit;
+}
+/* #success{
+  position: fixed;
+  width: 100%;
+}
+#failed{
+  position: fixed;
+} */
+#mod-back {
+  position: fixed;
+  z-index: 1;
+  /* width: 70%;
+  height: 70%; */
+  /* top: 10%; */
+  /* bottom: 10%; */
+  /* left: 20%;
+  right:20%; */
+  width: 100%;
+  height: auto;
+  align-content: center;
+  text-align: center; 
+  /* overflow: auto; */
+}
+/* Button style.... */
+.replay {
+  background-color: #f70;
+  color: #fff;
+  text-shadow: #000 2px 2px 1px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  /* width: 50%; */
+  position: fixed;  
+  z-index: 2;
+  margin: auto;
+  top: 50%;
+  left: 20%;
+  right: 20%;
+  width: 60%;
+  height: 4em;
+}
+#failed{
+  /* width: 50%; */
+  margin: auto;
+  border: #111ba7 2px solid;
+}
+#failed-img,#success-img{
+  width: 50%;
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  margin: auto;
+  bottom: 20%;
+}
+.no-display{
+  display: none;
+}

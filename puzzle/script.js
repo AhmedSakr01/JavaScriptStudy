@@ -87,9 +87,9 @@ var firstIndex;
 var nextindex;
 var score = 0;
 var firstItem;
-var moves=0;
+var moves = 0;
 var tableClickHandler = function tableClickEvtL(e) {
-  
+
   let evTarget = e.target;
   console.log('event target: ' + evTarget);
   if (e.target.nodeName == 'TD') {
@@ -161,9 +161,13 @@ function scoreUp() {
   //                        --> stop the counter
   //                        --> display CONGRATULATIONS MESSAGE! <<<< 
   if (score == 8) {
-    table[0].removeEventListener('click', tableClickHandler);
-    alert(`Time is up, your score is ${score}`);
     clearInterval(countDownTimer);
+    table[0].removeEventListener('click', tableClickHandler);
+    document.getElementById('message').setAttribute('class', 'visible');
+    document.getElementById('success-img').setAttribute('class', 'visible');
+    document.getElementById('failed').setAttribute('class', 'no-display');
+    clearInterval(countDownTimer);
+    setTimeout( function () { document.getElementById('successBtn').setAttribute('class', 'replay visible') },5000);
   }
 }
 function incorrect(index_1, index_2) {
@@ -208,13 +212,13 @@ startBtn.addEventListener('click', function (e) {
     var tableEvent = table[0].addEventListener('click', tableClickHandler);
 
     // setup a timer with 100-mSec interval ...
-    let t_min = 2, t_sec = 0, interval = 10;
+    let t_min = 1, t_sec = 0, interval = 10;
     countDownTimer = setInterval(function () {
       if (t_sec <= 0.1 & t_min > 0) {
         t_min--;
         t_sec = 60 - (interval / 1000);
       }
-      
+
       t_sec -= interval / 1000;
       timer.innerHTML = `${t_min}:${Number(t_sec).toFixed(2)}`;
       // turn the timer color to red when there are only 30 sec. left --->>>
@@ -224,16 +228,22 @@ startBtn.addEventListener('click', function (e) {
       else if (t_sec <= 0.1 & t_min <= 0) {
         //Time Out .....................>>>>>>>>>>>><<<<<<<<<<<<<
         table[0].removeEventListener('click', tableClickHandler);
-        if(score<8){
+        if (score < 8) {
           logoImage('dead');
+          document.getElementById('message').setAttribute('class', 'visible');
+          document.getElementById('failed').setAttribute('class', 'visible');
+          document.getElementById('failed-img').setAttribute('class', 'visible');
+          clearInterval(countDownTimer);
+          setTimeout( function () { document.getElementById('failBtn').setAttribute('class', 'replay visible') },5000);
+
         }
-        clearInterval(countDownTimer);
-        alert(`Time is up, your score is ${score}`);
+        // alert(`Time is up, your score is ${score}`);
       }
       // End of timer function  <<<
     }, interval);
     //---->>> Here Ends the setTimeOut timer of hiding the images<<<
   }, 2000);
+
 });
 
 function logoImage(status) {
