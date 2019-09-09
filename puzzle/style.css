@@ -325,9 +325,13 @@ fix td sizing for mobile phones..
 #failed{
   position: fixed;
 } */
-#mod-back {
+#message{
   position: fixed;
   z-index: 1;
+}
+#mod-back {
+  position: fixed;
+  z-index: 2;
   /* width: 70%;
   height: 70%; */
   /* top: 10%; */
@@ -350,7 +354,7 @@ fix td sizing for mobile phones..
   text-align: center;
   /* width: 50%; */
   position: fixed;  
-  z-index: 2;
+  z-index: 3;
   margin: auto;
   top: 50%;
   left: 20%;
