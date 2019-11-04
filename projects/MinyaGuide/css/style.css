@@ -1,0 +1,215 @@
+/* Reset  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main style */
+
+html, body {
+    font-family: 'Arial Narrow Bold', sans-serif;
+    line-height: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+h1, h2, h3 {
+    padding-bottom: 20px;
+}
+
+p {
+    margin: 20px 0;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    margin: auto;
+    max-width: 960px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.text-primary {
+    color: #f4a111;
+}
+
+.p1 {
+    font-size: 20px;
+}
+
+.centered {
+    margin: auto;
+}
+
+/* Link button-like style */
+
+.btn {
+    display: inline-block;
+    color: #f4a111;
+    text-align: center;
+    background: #333;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #f4a111;
+    color: #333;
+}
+
+.btn-light {
+    background: #ccc;
+    color: #333;
+}
+
+.btn-border {
+    border: double 5px #f4a111;
+    border-radius: 10px;
+}
+
+.bg-dark {
+    background: #333;
+}
+.bg-light{
+    background: #fff;
+} 
+.bg-orange{
+    background: #f3c08a;
+    color: #333 !important;
+}
+.alt   {
+    font-size: 10px;
+    float: left;
+}
+/* Navegation bar 'navbar' */
+
+#navbar {
+    background: #333;
+    color: #fff;
+    overflow: auto;
+}
+
+#navbar a {
+    color: #fff;
+    display: block;
+}
+
+#navbar h1 {
+    float: left;
+    padding: 20px 5px;
+}
+
+#navbar ul {
+    float: right;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+#navbar li a:hover, #navbar li a.current-page {
+    background: #252525;
+    color: #f4a111;
+}
+
+/* Showcase style...     */
+
+#showcase {
+    height: 400px;
+    background: url('../img/Minya-Showcase.jpg') no-repeat center center/cover;
+}
+
+#showcase .showcase-content {
+    padding-top: 10%;
+    color: #fff;
+    text-align: center;
+}
+
+#showcase .showcase-content h1 {
+    font-size: 60px;
+    color: #333;
+    text-shadow: #fff 5px 5px;
+    line-height: 1.2em;
+}
+
+#showcase .showcase-content p {
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: #fc0;
+    text-shadow: #000000 1px 1px;
+}
+
+/* Info section style */
+
+#city-info {
+    height: 300px;
+}
+
+.info-img {
+    float: left;
+    width: 50%;
+    background: url('/img/Minya-1.jpg') center top no-repeat;
+    min-height: 100%;
+}
+
+.info-text {
+    width: 50%;
+    color: #fff;
+    margin-top: 30px;
+    text-align: center;
+    float: right;
+}
+
+.info-text h2 {
+    font-size: 40px;
+    padding-top: 20px;
+    text-shadow: #000 2px 2px;
+}
+
+/* Categories styling */
+
+#categ {
+    display: flex;
+    flex-direction: row;
+    background: #ddd;
+}
+
+.categ {
+    width: 33.3%;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.categ p {
+    font-size: 12px;
+    margin-top: 0px;
+    /* color: #333; */
+}
+.categ i{
+    margin-bottom: 20px;
+}
+
+/* Footer style */
+#main-footer{
+text-align: center;
+background: #444;
+color: #fff;
+padding: 20px;
+
+}
