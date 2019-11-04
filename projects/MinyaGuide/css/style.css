@@ -79,17 +79,54 @@ li {
 .bg-dark {
     background: #333;
 }
-.bg-light{
-    background: #fff;
-} 
-.bg-orange{
+
+.bg-light {
+    background: #ccc;
+}
+
+.bg-orange {
     background: #f3c08a;
     color: #333 !important;
 }
-.alt   {
+
+.alt {
     font-size: 10px;
     float: left;
 }
+
+/* padding classes */
+
+.p-y1 {
+    padding: 10px 0;
+}
+
+.p-y2 {
+    padding: 20px 0;
+}
+
+.p-y3 {
+    padding: 30px 0;
+}
+
+.p-x1 {
+    padding: 0 10px;
+}
+
+.p-x2 {
+    padding: 0 20px;
+}
+
+.p-x3 {
+    padding: 0 30px;
+}
+
+/* large heading-1 */
+
+.l-heading {
+    font-size: 40px;
+    padding-top: 10px;
+}
+
 /* Navegation bar 'navbar' */
 
 #navbar {
@@ -158,6 +195,7 @@ li {
 
 #city-info {
     height: 300px;
+    overflow: hidden;
 }
 
 .info-img {
@@ -186,6 +224,7 @@ li {
 #categ {
     display: flex;
     flex-direction: row;
+    flex-direction: row;
     background: #ddd;
 }
 
@@ -201,15 +240,70 @@ li {
     margin-top: 0px;
     /* color: #333; */
 }
-.categ i{
+
+.categ i {
     margin-bottom: 20px;
 }
 
-/* Footer style */
-#main-footer{
-text-align: center;
-background: #444;
-color: #fff;
-padding: 20px;
+/* About page */
 
+/* About info style... */
+
+#about-info .info-right {
+    float: right;
+    width: 50%;
+    min-height: 100%;
+}
+
+#about-info .info-right img {
+    display: block;
+    width: 70%;
+    margin: auto;
+    border-radius: 50%;
+}
+
+#about-info .info-left {
+    float: left;
+    width: 50%;
+    min-height: 100%;
+}
+
+/* Sayings */
+
+#sayings {
+    height:max-content;
+    background: url('/img/Minya-Showcase.jpg') center center/cover no-repeat;
+    padding-top: 30px;
+}
+
+#sayings h2 {
+    text-align: center;
+}
+
+#sayings .saying {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    opacity: 0.85;
+}
+
+#sayings .saying img {
+    width: 100px;
+    margin-right: 20px;
+    float: left;
+    border-radius: 50%;
+    opacity: 1;
+}
+#sayings .saying p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer style */
+
+#main-footer {
+    text-align: center;
+    background: #444;
+    color: #fff;
+    padding: 20px;
 }
