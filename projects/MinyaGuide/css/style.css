@@ -271,7 +271,7 @@ li {
 /* Sayings */
 
 #sayings {
-    height:max-content;
+    height: max-content;
     background: url('/img/Minya-Showcase.jpg') center center/cover no-repeat;
     padding-top: 30px;
 }
@@ -294,9 +294,57 @@ li {
     border-radius: 50%;
     opacity: 1;
 }
+
 #sayings .saying p {
     margin: 0;
     padding: 0;
+}
+
+/* Contact page */
+
+/* Form style */
+
+#contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 5px;
+    border: solid #ddd 2px;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    outline: none;
+    border: solid 2px #f3c08a;
+}
+
+#contact-form textarea {
+    height: 200px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+/* Contact-info section */
+
+#contact-info .container {
+    display: flex;
+    margin: auto;
+    color: #fff;
+}
+
+#contact-info .container .categ {
+    max-height: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+#contact-info a{
+    color: #fff;
 }
 
 /* Footer style */

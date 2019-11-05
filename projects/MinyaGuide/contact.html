@@ -8,8 +8,9 @@
     <meta name="discription" content="A guide to the main landmarks and activities in Minya governorate">
     <meta name="keywords" content="Egypt, upper Egypt, Minya, Minia, activities, events, landmarks">
     <meta name="location" content="https://goo.gl/maps/qr3uckfXeRxmbzKx9">
+    <script src="https://kit.fontawesome.com/ed1f1d91df.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <title>Minya Guide</title>
+    <title>Contact: Minya Guide</title>
 </head>
 
 <body>
@@ -18,17 +19,61 @@
             <div class="container">
                 <h1 class="logo"><a href="index.html"> Minya Guide</a></h1>
                 <ul>
-                    <li><a href="index.html" >Home</a></li>
-                    <li><a href="about.html" >About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html" class="current-page">Contact us</a></li>
-
-
                 </ul>
             </div>
-
         </nav>
-
     </header>
+    <section id="contact-form" class="p-y3">
+        <div class="container">
+            <h1 class="l-heading">
+                <span class="text-primary">Contact</span> us
+            </h1>
+            <p>Please tell us about your visits to Minya</p>
+            <form action="process.php">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea type="text" name="message" id="message"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact-info" class="bg-dark">
+        <div class="container">
+            <div id="contact-location" class="categ">
+                <i class="fas fa-map fa-4x"></i>
+                <h3>location</h3>
+                <p>Minya, Qism Minya, Minya</p>
+            </div>
+            <div id="contact-phone" class="categ">
+                <i class="fas fa-phone fa-4x"></i>
+                <h3>Phone</h3>
+                <p class="cat-content">+20101658888888</p>
+            </div>
+            <div id="contact-facebook" class="categ">
+                <i class="fab fa-facebook-f fa-4x"></i>
+                <h3>facebook</h3>
+                <p class="cat-content"><a href="https://www.facebook.com/ahmedsakr01">Follow us</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="main-footer">
+        <p>Minya, Egypt &copy;2019-2020</p>
+    </footer>
+
 </body>
 
 </html>
